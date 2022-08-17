@@ -1,0 +1,10 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^([^/\.]+)$ $1.php 
+
+#SEO friendly URLs
+RewriteRule ^([a-z]+)?$ index.php?language=$1 [L] 
+RewriteRule ^abouts/([a-z]+)?$ about.php?language=$1 [L] 
+RewriteRule ^contacts/([a-z]+)?$ contact.php?language=$1 [L] 
